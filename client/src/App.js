@@ -1,14 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Hello from "./pages/Hello";
-import ReactJS from "./pages/ReactJS";
+import HomePages from "./pages/HomePages";
+import AddBook from "./pages/AddBook";
+import UpdateBook from "./pages/UpdateBook";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Hello />} />
-        <Route path="react" element={<ReactJS />} />
+        <Route path="/" element={<HomePages />} />
+        <Route path="/add" element={<AddBook />} />
+        <Route path="/update" element={<UpdateBook />} />
       </Routes>
     </div>
   );

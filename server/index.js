@@ -1,6 +1,7 @@
 // importation of what i needed
 import express from "express";
 import mysql from "mysql";
+import cors from "cors";
 //end importation
 
 // just i declared a variable for i can work with express tool
@@ -8,6 +9,7 @@ const app = express();
 
 // that is middleware chnwa role mta3a bech najem nab3ith data json min client side
 app.use(express.json());
+app.use(cors()); // hadhi 3lach zidtha jtini mochkla fil front end 9ali error cors haka 3lach sbaitha w bdit  n5dim biha
 // end declaration
 
 // just i will right some code for connect database "SQL"
