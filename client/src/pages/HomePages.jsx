@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import BookCard from "../components/BookCard";
+import "./HomePage.css";
+import { Link } from "react-router-dom";
 
 const HomePages = () => {
   const [allBooks, setAllBooks] = useState([]);
@@ -16,10 +19,17 @@ const HomePages = () => {
   }, []);
 
   return (
-    <div>
-      {allBooks.map((el) => (
-        <h1 key={el.id}> {el.title} </h1>
-      ))}
+    <div className="fixCss">
+      <h1 className="titleStore">Book Store</h1>
+      <button className="AddBook">
+        {" "}
+        <Link to={"/add"}>Add Book</Link>{" "}
+      </button>
+      <div className="wrapper">
+        {allBooks.map((el) => (
+          <BookCard key={el.id} book={el} />
+        ))}
+      </div>
     </div>
   );
 };

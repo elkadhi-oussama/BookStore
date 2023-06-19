@@ -1,0 +1,50 @@
+body {
+  background-color: #393646;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+  font-family: "Lato";
+}
+
+.titleStore {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  font-size: 4.5rem;
+  font-style: italic;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+}
+.AddBook {
+  background-color: #6d5d6e;
+  outline: 0;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+
+  padding: 20px;
+  font-size: 1rem;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 5px 5px #4f4557;
+}
+.AddBook > * {
+  color: white;
+}
+.AddBook:hover {
+  cursor: pointer;
+  background-color: white;
+}
+.AddBook:hover > * {
+  color: #6d5d6e;
+}
+.wrapper {
+  width: 60%;
+  margin: 2% auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

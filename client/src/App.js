@@ -6,7 +6,7 @@ import UpdateBook from "./pages/UpdateBook";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<HomePages />} />
         <Route path="/add" element={<AddBook />} />
