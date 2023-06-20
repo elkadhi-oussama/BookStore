@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AddBook.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
+  const [newBook, setnewBook] = useState({
+    title: "",
+    cover: "",
+    desc: "",
+  });
+  const history = useNavigate();
+
+  const handelADD = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post("http://localhost:5000/books", newBook);
+      history("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="centreForm">
       {" "}
@@ -9,28 +27,46 @@ const AddBook = () => {
         <div class="title">Add Book</div>
         <div class="subtitle">Let's add your book!</div>
         <div class="input-container ic1">
-          <input id="firstname" class="input" type="text" placeholder=" " />
+          <input
+            id="firstname"
+            class="input"
+            type="text"
+            placeholder=" "
+            onChange={(e) => setnewBook({ ...newBook, title: e.target.value })}
+          />
           <div class="cut"></div>
           <label for="firstname" class="placeholder">
-            First name
+            Title
           </label>
         </div>
         <div class="input-container ic2">
-          <input id="lastname" class="input" type="text" placeholder=" " />
+          <input
+            id="lastname"
+            class="input"
+            type="text"
+            placeholder=" "
+            onChange={(e) => setnewBook({ ...newBook, cover: e.target.value })}
+          />
           <div class="cut"></div>
           <label for="lastname" class="placeholder">
-            Last name
+            Image
           </label>
         </div>
         <div class="input-container ic2">
-          <input id="email" class="input" type="text" placeholder=" " />
+          <input
+            id="email"
+            class="input"
+            type="text"
+            placeholder=" "
+            onChange={(e) => setnewBook({ ...newBook, desc: e.target.value })}
+          />
           <div class="cut cut-short"></div>
           <label for="email" class="placeholder">
-            Email
+            Description
           </label>
         </div>
-        <button type="text" class="submit">
-          submit
+        <button onClick={handelADD} type="text" class="submit">
+          ADD
         </button>
       </div>
     </div>
