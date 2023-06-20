@@ -21,10 +21,9 @@ const HomePages = () => {
   return (
     <div className="fixCss">
       <h1 className="titleStore">Book Store</h1>
-      <button className="AddBook">
-        {" "}
-        <Link to={"/add"}>Add Book</Link>{" "}
-      </button>
+      <Link to={"/add"}>
+        <button className="AddBook"> Add Book </button>
+      </Link>
       <div className="wrapper">
         {allBooks.map((el) => (
           <BookCard key={el.id} book={el} />
