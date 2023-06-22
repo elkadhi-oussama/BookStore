@@ -20,6 +20,21 @@ const AddBook = () => {
       console.log(error);
     }
   };
+
+  // i will make anther function for add book
+  // first one i need to add in every input attribute name
+  // example : <input
+  //          name ="title"
+  //         id="firstname"
+  //         class="input"
+  //         type="text"
+  //         placeholder=" "
+  //         onChange={handelChange}
+  //       />
+  // i will make the function name handelchange ==> for get data from input and save in state
+  // const handelChange = (e)=>{
+  //   setnewBook (prev => ({...prev, [e.target.name]: e.target.value}))
+  // }
   return (
     <div className="centreForm">
       {" "}
