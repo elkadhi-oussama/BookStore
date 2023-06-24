@@ -1,7 +1,16 @@
 import React from "react";
 import "./BookCards.css";
+import axios from "axios";
 
 const BookCard = ({ book }) => {
+  const handelDelete = async (id) => {
+    try {
+      await axios.delete("http://localhost:5000/books/" + id);
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div>
       <div className="card">
@@ -16,7 +25,9 @@ const BookCard = ({ book }) => {
         </div>
       </div>
       <div className="styleBtnCard">
-        <button className="DelBTN">Delete</button>
+        <button className="DelBTN" onClick={() => handelDelete(book.id)}>
+          Delete
+        </button>
         <button className="UpdBTN">Update</button>
       </div>
     </div>

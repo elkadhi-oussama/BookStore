@@ -45,6 +45,19 @@ app.post("/books", (req, res) => {
     return res.json(data);
   });
 });
+// end add
+
+// i will create right now delete
+app.delete("/books/:id", (req, res) => {
+  const bookID = req.params.id;
+  const q = "DELETE FROM books WHERE id = ?";
+  db.query(q, [bookID], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+// end delete
 
 // app listen hadhi role mta3aha ani bech nconnetacter backend mta3ya w n5adma 3ala anhou port exact
 app.listen(5000, () => {
