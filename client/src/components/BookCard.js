@@ -1,6 +1,7 @@
 import React from "react";
 import "./BookCards.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const BookCard = ({ book }) => {
   const handelDelete = async (id) => {
@@ -28,7 +29,9 @@ const BookCard = ({ book }) => {
         <button className="DelBTN" onClick={() => handelDelete(book.id)}>
           Delete
         </button>
-        <button className="UpdBTN">Update</button>
+        <Link to={`/update/${book.id}`}>
+          <button className="UpdBTN">Update</button>
+        </Link>
       </div>
     </div>
   );

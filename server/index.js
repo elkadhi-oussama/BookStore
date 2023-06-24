@@ -59,6 +59,19 @@ app.delete("/books/:id", (req, res) => {
 
 // end delete
 
+// i will create update crud
+app.put("/books/:id", (req, res) => {
+  const bookID = req.params.id;
+  const values = [req.body.title, req.body.desc, req.body.cover];
+  const q =
+    "UPDATE books SET `title` = ?, `desc`= ?, `cover`= ? WHERE id = ?; ";
+  db.query(q, [...values, bookID], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+//end of update
+
 // app listen hadhi role mta3aha ani bech nconnetacter backend mta3ya w n5adma 3ala anhou port exact
 app.listen(5000, () => {
   console.log("server is rnunig");

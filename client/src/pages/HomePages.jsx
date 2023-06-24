@@ -4,13 +4,14 @@ import BookCard from "../components/BookCard";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
 
-const HomePages = () => {
+const HomePages = ({ getDataFun }) => {
   const [allBooks, setAllBooks] = useState([]);
   useEffect(() => {
     const fetchAllData = async () => {
       try {
         const result = await axios.get("http://localhost:5000/");
         setAllBooks(result.data);
+        getDataFun(result.data);
       } catch (error) {
         console.log(error);
       }

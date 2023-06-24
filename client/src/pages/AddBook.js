@@ -38,49 +38,49 @@ const AddBook = () => {
   return (
     <div className="centreForm">
       {" "}
-      <div class="form">
-        <div class="title">Add Book</div>
-        <div class="subtitle">Let's add your book!</div>
-        <div class="input-container ic1">
+      <div className="form">
+        <div className="title">Add Book</div>
+        <div className="subtitle">Let's add your book!</div>
+        <div className="input-container ic1">
           <input
             id="firstname"
-            class="input"
+            className="input"
             type="text"
             placeholder=" "
             onChange={(e) => setnewBook({ ...newBook, title: e.target.value })}
           />
-          <div class="cut"></div>
-          <label for="firstname" class="placeholder">
+          <div className="cut"></div>
+          <label for="firstname" className="placeholder">
             Title
           </label>
         </div>
-        <div class="input-container ic2">
+        <div className="input-container ic2">
           <input
             id="lastname"
-            class="input"
+            className="input"
             type="text"
             placeholder=" "
             onChange={(e) => setnewBook({ ...newBook, cover: e.target.value })}
           />
-          <div class="cut"></div>
-          <label for="lastname" class="placeholder">
+          <div className="cut"></div>
+          <label for="lastname" className="placeholder">
             Image
           </label>
         </div>
-        <div class="input-container ic2">
+        <div className="input-container ic2">
           <input
             id="email"
-            class="input"
+            className="input"
             type="text"
             placeholder=" "
             onChange={(e) => setnewBook({ ...newBook, desc: e.target.value })}
           />
-          <div class="cut cut-short"></div>
-          <label for="email" class="placeholder">
+          <div className="cut cut-short"></div>
+          <label for="email" className="placeholder">
             Description
           </label>
         </div>
-        <button onClick={handelADD} type="text" class="submit">
+        <button onClick={handelADD} type="text" className="submit">
           ADD
         </button>
       </div>
