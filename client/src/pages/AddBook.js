@@ -8,6 +8,7 @@ const AddBook = () => {
     title: "",
     cover: "",
     desc: "",
+    down: "",
   });
   const history = useNavigate();
 
@@ -78,6 +79,19 @@ const AddBook = () => {
           <div className="cut cut-short"></div>
           <label for="email" className="placeholder">
             Description
+          </label>
+        </div>
+        <div className="input-container ic2">
+          <input
+            id="email"
+            className="input"
+            type="text"
+            placeholder=" "
+            onChange={(e) => setnewBook({ ...newBook, down: e.target.value })}
+          />
+          <div className="cut cut-short"></div>
+          <label for="email" className="placeholder">
+            Download
           </label>
         </div>
         <button onClick={handelADD} type="text" className="submit">

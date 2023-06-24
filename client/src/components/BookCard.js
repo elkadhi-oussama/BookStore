@@ -12,6 +12,7 @@ const BookCard = ({ book }) => {
       console.log(error);
     }
   };
+
   return (
     <div>
       <div className="card">
@@ -19,10 +20,12 @@ const BookCard = ({ book }) => {
         <div className="descriptions">
           <h1> {book.title} </h1>
           <p>{book.desc}</p>
-          <button>
-            <i className="fab fa-youtube"></i>
-            Download
-          </button>
+          <Link to={book.down} target="_blank">
+            <button>
+              <i className="fab fa-youtube"></i>
+              Download
+            </button>
+          </Link>
         </div>
       </div>
       <div className="styleBtnCard">

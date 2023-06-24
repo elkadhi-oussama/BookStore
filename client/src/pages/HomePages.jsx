@@ -22,7 +22,7 @@ const HomePages = ({ getDataFun }) => {
   return (
     <div className="fixCss">
       <h1 className="titleStore">Book Store</h1>
-      <Link to={"/add"}>
+      <Link to={"/add"} className="addLink">
         <button className="AddBook"> Add Book </button>
       </Link>
       <div className="wrapper">

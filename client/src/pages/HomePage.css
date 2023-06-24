@@ -17,6 +17,11 @@ body {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
 }
+.addLink {
+  display: flex;
+  margin: 0 auto;
+  width: 14rem;
+}
 .AddBook {
   background-color: #6d5d6e;
   outline: 0;

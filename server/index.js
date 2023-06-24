@@ -38,8 +38,8 @@ app.get("/", (req, res) => {
 // i will add some book in my dataBase
 
 app.post("/books", (req, res) => {
-  const q = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?);";
-  const values = [req.body.title, req.body.desc, req.body.cover];
+  const q = "INSERT INTO books (`title`, `desc`, `cover`, `down`) VALUES (?);";
+  const values = [req.body.title, req.body.desc, req.body.cover, req.body.down];
   db.query(q, [values], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
@@ -62,9 +62,9 @@ app.delete("/books/:id", (req, res) => {
 // i will create update crud
 app.put("/books/:id", (req, res) => {
   const bookID = req.params.id;
-  const values = [req.body.title, req.body.desc, req.body.cover];
+  const values = [req.body.title, req.body.desc, req.body.cover, req.body.down];
   const q =
-    "UPDATE books SET `title` = ?, `desc`= ?, `cover`= ? WHERE id = ?; ";
+    "UPDATE books SET `title` = ?, `desc`= ?, `cover`= ?, `down`= ?WHERE id = ?; ";
   db.query(q, [...values, bookID], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);

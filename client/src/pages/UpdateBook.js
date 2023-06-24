@@ -68,6 +68,20 @@ const UpdateBook = ({ book }) => {
             Description
           </label>
         </div>
+        <div className="input-container ic2">
+          <input
+            name="down"
+            id="email"
+            className="input"
+            type="text"
+            placeholder={bookUpd && bookUpd.down}
+            onChange={handelChange}
+          />
+          <div className="cut cut-short"></div>
+          <label for="email" className="placeholder2">
+            Downlaod
+          </label>
+        </div>
         <button
           onClick={() => handelUpdate(bookUpd.id)}
           type="text"
