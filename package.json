@@ -1,22 +1,18 @@
 {
-  "name": "server",
+  "name": "sern_project",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "back": "cd server && npm start",
+    "front": "cd client && npm start",
+    "dev": "concurrently \"npm run back\" \"npm run front\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^8.2.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.22",
-    "sql": "^0.78.0"
+    "concurrently": "^8.2.0"
   }
 }
